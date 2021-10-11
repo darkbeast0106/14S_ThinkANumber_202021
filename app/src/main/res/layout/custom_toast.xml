@@ -15,6 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Elvesztettél egy életet"
+        android:textAlignment="center"
+        android:id="@+id/textViewCustom"
         android:textSize="25sp"/>
 
 </LinearLayout>

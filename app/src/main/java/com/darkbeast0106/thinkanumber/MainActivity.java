@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Random random;
     private Toast customToast;
     private AlertDialog.Builder alertBuilder;
+    private TextView textViewCustom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
             } else if (felhasznaloTipp < gondoltSzam) {
                 // Nagyobb számra gondoltam EGYEDI TOAST
                 eletLevon();
+                textViewCustom.setText("Nagyobb számra gondoltam!");
                 customToast.show();
-                Toast.makeText(getApplicationContext(), "Nagyobb száma gondoltam!", Toast.LENGTH_SHORT).show();
             } else {
                 // Kisebb számra gondoltam EGYEDI TOAST
                 eletLevon();
+                textViewCustom.setText("Kisebb számra gondoltam!");
                 customToast.show();
-                Toast.makeText(getApplicationContext(), "Kisebb száma gondoltam!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -142,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         customToast.setDuration(Toast.LENGTH_SHORT);
         View view = getLayoutInflater().inflate(R.layout.custom_toast,
                 findViewById(R.id.custom_toast));
+        textViewCustom = view.findViewById(R.id.textViewCustom);
         customToast.setView(view);
         customToast.setGravity(Gravity.CENTER, 0, 0);
     }
