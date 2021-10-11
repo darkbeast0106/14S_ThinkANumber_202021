@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             if (felhasznaloTipp == gondoltSzam) {
                 // Győzelem ALERT DIALOG
                 //alertBuilder.setTitle("Győztél, játék vége!").create().show();
-                alertBuilder.setTitle("Játék vége");
+                alertBuilder.setTitle("Győztél, játék vége");
                 alertBuilder.create();
                 alertBuilder.show();
             } else if (felhasznaloTipp < gondoltSzam) {
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         eletek = new ImageView[]{hp1, hp2, hp3, hp4};
         customToast = new Toast(getApplicationContext());
         CreateCustomToast();
-        alertBuilder = new AlertDialog.Builder(getApplicationContext());
+        alertBuilder = new AlertDialog.Builder(this);
         CreateAlertDialog();
     }
 
